@@ -1,0 +1,31 @@
+{
+  "rules": {
+    "usuarios": {
+      "$uid": {
+        ".read": "auth != null && auth.uid == $uid",
+        ".write": "auth != null && auth.uid == $uid",
+        
+        "entradas": {
+          ".indexOn": ["data"]
+        },
+        "despesas": {
+          ".indexOn": ["data"]
+        },
+        "fixos": {
+          ".indexOn": ["vencimento"]
+        },
+        "pendencias": {
+          ".indexOn": ["vencimento"]
+        },
+        "cartoes_specs": {
+          ".indexOn": ["dataInicio"]
+        },
+        "investimentos": {
+          "historico": {
+            ".indexOn": "data"
+          }
+        }
+      }
+    }
+  }
+}
